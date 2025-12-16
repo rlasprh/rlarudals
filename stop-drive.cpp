@@ -66,15 +66,15 @@ private:
       return;
     }
 
-    // --- STOP if obstacle closer than 15cm (0.15m) ---
-    if (min_range < 0.15f)
+    // --- STOP if obstacle closer than 18cm (0.18m) ---
+    if (min_range < 0.18f)
     {
       cmd.twist.linear.x = 0.0;
       cmd.twist.angular.z = 0.0;
 
       RCLCPP_WARN(
         get_logger(),
-        "[STEP %d] Obstacle detected at %.3f m (<15cm) → STOP!",
+        "[STEP %d] Obstacle detected at %.3f m (<18cm) → STOP!",
         step_, min_range
       );
     }
